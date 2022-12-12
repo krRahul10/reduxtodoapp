@@ -8,5 +8,8 @@ export const TodoReducer = (state = init_state, action) => {
         ...state,
         user_data: [...state.user_data, action.payload],
       };
+
+      default :
+      return state
   }
 };

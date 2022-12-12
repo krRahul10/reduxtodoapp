@@ -1,10 +1,15 @@
 import React from 'react'
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
-import DeleteIcon from '@mui/icons-material/Delete';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Todo = () => {
+
+  const { user_data} = useSelector((state) => state.TodoReducer);
+
+  console.log(user_data);
+
   return (
     <div>
     <div className="todo_data col-lg-5 mx-auto mt-2">
