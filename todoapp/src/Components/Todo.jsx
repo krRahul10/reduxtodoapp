@@ -14,7 +14,10 @@ const Todo = () => {
 
   // model ke ander value ke liye  elem ka use hoga
   const [showeyeval, setShoweyeval] = useState("");
-  
+
+  const [ show , setShow] = useState(false)
+  const [ update , setUpdate] = useState("")
+  const [ ind , setInd] = useState("")
 
   // useSelector ka use reducer ke function ko call karne ke liye hota h
   const { user_data } = useSelector((state) => state.TodoReducer);
@@ -28,6 +31,11 @@ const Todo = () => {
     // console.log("id", id)
     dispatch(RemoveData(id))
     alert("data delete")
+  }
+
+  const handleShow = (el)=>{
+setShow(true)
+setInd(el)
   }
 
   return (
@@ -48,6 +56,11 @@ const Todo = () => {
                 <div className="edit_dlt col-lg-3 py-2 d-flex justify-content-between align-items-center">
                   <ModeEditIcon
                     style={{ color: "#337ab7 ", cursor: "pointer" }}
+                    onClick={()=>{
+                      handleShow(elem)
+                      setInd(k)
+
+                    }}
                   />
                   <DeleteForeverIcon
                     style={{ color: "red ", cursor: "pointer" }}
