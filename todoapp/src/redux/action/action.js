@@ -11,3 +11,11 @@ export const RemoveData = (id) => {
       payload:id
     };
   };
+
+  export const UpdateData = (items,id) => {
+    return {
+      type:"UPDATE_DATA",
+      payload:items,
+      d:id
+    };
+  };

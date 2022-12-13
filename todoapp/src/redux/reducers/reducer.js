@@ -18,6 +18,15 @@ export const TodoReducer = (state = init_state, action) => {
         user_data: afterDelete,
       };
 
+    case "UPDATE_DATA":
+      const update_data = state.user_data.map((elem, k) =>
+        k == action.d ? action.payload : elem
+      );
+
+      return {
+        user_data: update_data,
+      };
+
     default:
       return state;
   }
