@@ -4,3 +4,10 @@ export const Add = (item) => {
     payload:item
   };
 };
+
+export const RemoveData = (id) => {
+    return {
+      type:"DELETE_DATA",
+      payload:id
+    };
+  };

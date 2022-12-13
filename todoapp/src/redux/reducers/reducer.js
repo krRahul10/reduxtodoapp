@@ -9,7 +9,16 @@ export const TodoReducer = (state = init_state, action) => {
         user_data: [...state.user_data, action.payload],
       };
 
-      default :
-      return state
+    case "DELETE_DATA":
+      const afterDelete = state.user_data.filter(
+        (elem, k) => k !== action.payload
+      );
+
+      return {
+        user_data: afterDelete,
+      };
+
+    default:
+      return state;
   }
 };

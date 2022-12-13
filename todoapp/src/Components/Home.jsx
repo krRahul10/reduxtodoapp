@@ -14,6 +14,7 @@ const Home = () => {
 
   const addData = () => {
     dispatch(Add(data))
+    setData("")
   };
   return (
     <div>
